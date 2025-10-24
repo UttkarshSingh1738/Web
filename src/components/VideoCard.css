@@ -1,0 +1,64 @@
+.video-card{
+  width: 100%;
+  display: block;
+  background: var(--glass-bg, rgba(255,255,255,0.02));
+  border: 1px solid var(--glass-border, rgba(255,255,255,0.04));
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-radius 0.35s ease;
+  position: relative;
+}
+
+.video-card:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  border-radius: 16px;
+}
+
+.video-card .first-content{
+  height: 100%;
+  width: 100%;
+  display: block;
+  transition: all 0.35s ease;
+}
+
+.video-card .first-content img{
+  display:block;
+  width: 100%;
+}
+
+.video-card .second-content{
+  position: absolute;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity: 0;
+  height: 0;
+  transition: all 0.35s ease;
+  background: rgba(0,0,0,0.5);
+}
+
+.video-card .yt-logo{
+  width: 64px;
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6));
+  transition: transform 0.25s ease;
+}
+
+.video-card:hover .first-content{
+  height: 0;
+  opacity: 0;
+}
+
+.video-card:hover .second-content{
+  height: 100%;
+  opacity: 1;
+}
+
+/* keep titles readable when first-content visible */
+.video-card .p-5{ padding:1rem }
+
+@media (max-width: 640px){
+  .video-card .yt-logo{ width:48px }
+}
