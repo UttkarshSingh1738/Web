@@ -186,7 +186,7 @@ export default function Portfolio() {
               <div className="flex items-center gap-4">
                 <div className="w-64 h-64 rounded-full overflow-hidden border ">
                   <img
-                    src="/avatar.jpg"
+                    src={`${(import.meta as any).env.BASE_URL}avatar.jpg`}
                     alt="Uttkarsh Singh"
                     className="w-full h-full object-cover"
                   />
@@ -257,6 +257,7 @@ export default function Portfolio() {
         </motion.div>
       </header>
 
+      {/* Experience */}        
       <section
         id="experience"
         className="max-w-6xl mx-auto px-10 sm:px-8 py-12"
@@ -408,7 +409,7 @@ export default function Portfolio() {
         <div className="rounded-2xl border p-6 bg-white dark:bg-zinc-900">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Avatar src="/logos/thetachi.png" alt="Theta Chi logo" />
+              <Avatar src={`${(import.meta as any).env.BASE_URL}logos/thetachi.png`} alt="Theta Chi logo" />
               <h3 className="text-lg font-semibold">Theta Chi Fraternity</h3>
             </div>
             <span className="text-xs text-slate-500">

@@ -22,7 +22,7 @@ export default function VolunteerCard({
         {/* FRONT */}
         <div className="vol-card-front">
           <img
-            src={`/logos/${logo}.png`}
+            src={`${(import.meta as any).env.BASE_URL}logos/${logo}.png`}
             alt={`${org} logo`}
             className="vol-logo"
           />

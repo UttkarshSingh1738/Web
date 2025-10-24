@@ -28,7 +28,7 @@ export default function ExperienceCard({
         {/* FRONT */}
         <div className="exp-card-front">
           <img
-            src={`/logos/${logo}.png`}
+            src={`${(import.meta as any).env.BASE_URL}logos/${logo}.png`}
             alt={`${company} logo`}
             className="exp-logo"
           />
