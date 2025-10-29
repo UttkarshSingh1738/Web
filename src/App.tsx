@@ -1,12 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, Globe, Cpu, Bot, Shield, Database, LineChart, Building2, MapPin } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Globe, Cpu, Bot, Shield, Database, LineChart, Building2, MapPin, FileText } from "lucide-react";
 import TechBubblesBackground from "./components/TechBubblesBackground";
 import "./components/VideoCard.css";
 import ExperienceCard from "./components/ExperienceCard";
-import VolunteerCard from "./components/Volunteercard";
+import VolunteerCard from "./components/VolunteerCard";
 
 export default function Portfolio() {
+  const [showResume, setShowResume] = React.useState(false);
+  const resumeUrl = `${(import.meta as any).env.BASE_URL}resume.pdf`;
+
 
   const Avatar = ({
     text,
@@ -198,8 +201,19 @@ export default function Portfolio() {
                   <div className="text-sm text-slate-300">
                     Software engineer • AI & systems
                   </div>
+                  <div className="max-w-6xl mx-auto px-5 sm:px-8">
+                    <div className="mt-4 flex items-center">
+                      <button
+                        onClick={() => setShowResume(true)}
+                        className="inline-flex items-center gap-3 rounded-full bg-emerald-500 px-6 py-3 text-base font-semibold text-white shadow-xl hover:brightness-95"
+                      >
+                        <FileText className="w-5 h-5" /> View Resume
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
+
               <p className="mt-3 max-w-2xl text-base sm:text-lg text-slate-300">
                 Software engineer who ships real systems. I work on AI, risk
                 aware automation, and data heavy backends. I like hard problems
@@ -257,7 +271,7 @@ export default function Portfolio() {
         </motion.div>
       </header>
 
-      {/* Experience */}        
+      {/* Experience */}
       <section
         id="experience"
         className="max-w-6xl mx-auto px-10 sm:px-8 py-12"
@@ -339,68 +353,88 @@ export default function Portfolio() {
       {/* Videos */}
       <Section id="videos" title="Projects in action">
         <div className="grid md:grid-cols-3 gap-6">
-            <a
-              href="https://youtu.be/fTSMbk9R4XI"
-              target="_blank"
-              rel="noreferrer"
-              className="video-card rounded-2xl border overflow-hidden"
-            >
-              <div className="first-content">
-                <img
-                  src="https://img.youtube.com/vi/fTSMbk9R4XI/hqdefault.jpg"
-                  alt="Project video 1"
-                  className="w-full aspect-video object-cover"
-                />
-                <div className="p-5">
-                  <h3 className="font-semibold">Box detection, tracking and counting with YOLOv4</h3>
-                </div>
+          <a
+            href="https://youtu.be/fTSMbk9R4XI"
+            target="_blank"
+            rel="noreferrer"
+            className="video-card rounded-2xl border overflow-hidden"
+          >
+            <div className="first-content">
+              <img
+                src="https://img.youtube.com/vi/fTSMbk9R4XI/hqdefault.jpg"
+                alt="Project video 1"
+                className="w-full aspect-video object-cover"
+              />
+              <div className="p-5">
+                <h3 className="font-semibold">
+                  Box detection, tracking and counting with YOLOv4
+                </h3>
               </div>
-              <div className="second-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" className="yt-logo" />
-              </div>
-            </a>
+            </div>
+            <div className="second-content">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+                alt="YouTube"
+                className="yt-logo"
+              />
+            </div>
+          </a>
 
-            <a
-              href="https://youtu.be/xpj3xTfFrpE"
-              target="_blank"
-              rel="noreferrer"
-              className="video-card rounded-2xl border overflow-hidden"
-            >
-              <div className="first-content">
-                <img
-                  src="https://img.youtube.com/vi/xpj3xTfFrpE/hqdefault.jpg"
-                  alt="Project video 2"
-                  className="w-full aspect-video object-cover"
-                />
-                <div className="p-5">
-                  <h3 className="font-semibold">Traffic Management and Density Control using YOLOv4 and Deepsort</h3>
-                </div>
+          <a
+            href="https://youtu.be/xpj3xTfFrpE"
+            target="_blank"
+            rel="noreferrer"
+            className="video-card rounded-2xl border overflow-hidden"
+          >
+            <div className="first-content">
+              <img
+                src="https://img.youtube.com/vi/xpj3xTfFrpE/hqdefault.jpg"
+                alt="Project video 2"
+                className="w-full aspect-video object-cover"
+              />
+              <div className="p-5">
+                <h3 className="font-semibold">
+                  Traffic Management and Density Control using YOLOv4 and
+                  Deepsort
+                </h3>
               </div>
-              <div className="second-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" className="yt-logo" />
-              </div>
-            </a>
+            </div>
+            <div className="second-content">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+                alt="YouTube"
+                className="yt-logo"
+              />
+            </div>
+          </a>
 
-            <a
-              href="https://youtu.be/s3qkk-qW3xY"
-              target="_blank"
-              rel="noreferrer"
-              className="video-card rounded-2xl border overflow-hidden"
-            >
-              <div className="first-content">
-                <img
-                  src="https://img.youtube.com/vi/s3qkk-qW3xY/hqdefault.jpg"
-                  alt="Project video 3"
-                  className="w-full aspect-video object-cover"
-                />
-                <div className="p-5">
-                  <h3 className="font-semibold">Traffic Management and Density Control using YOLOv4 and Deepsort - 2</h3>
-                </div>
+          <a
+            href="https://youtu.be/s3qkk-qW3xY"
+            target="_blank"
+            rel="noreferrer"
+            className="video-card rounded-2xl border overflow-hidden"
+          >
+            <div className="first-content">
+              <img
+                src="https://img.youtube.com/vi/s3qkk-qW3xY/hqdefault.jpg"
+                alt="Project video 3"
+                className="w-full aspect-video object-cover"
+              />
+              <div className="p-5">
+                <h3 className="font-semibold">
+                  Traffic Management and Density Control using YOLOv4 and
+                  Deepsort - 2
+                </h3>
               </div>
-              <div className="second-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" className="yt-logo" />
-              </div>
-            </a>
+            </div>
+            <div className="second-content">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+                alt="YouTube"
+                className="yt-logo"
+              />
+            </div>
+          </a>
         </div>
       </Section>
 
@@ -409,7 +443,10 @@ export default function Portfolio() {
         <div className="rounded-2xl border p-6 bg-white dark:bg-zinc-900">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Avatar src={`${(import.meta as any).env.BASE_URL}logos/thetachi.png`} alt="Theta Chi logo" />
+              <Avatar
+                src={`${(import.meta as any).env.BASE_URL}logos/thetachi.png`}
+                alt="Theta Chi logo"
+              />
               <h3 className="text-lg font-semibold">Theta Chi Fraternity</h3>
             </div>
             <span className="text-xs text-slate-500">
@@ -572,6 +609,27 @@ export default function Portfolio() {
           </div>
         </div>
       </Section>
+
+      {/* Resume viewer modal */}
+      {showResume && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="relative w-[90vw] h-[90vh] rounded-2xl overflow-hidden border border-slate-700 bg-slate-900">
+            <button
+              onClick={() => setShowResume(false)}
+              className="absolute top-3 right-3 z-50 rounded-full bg-slate-800/70 text-white p-2 shadow-md hover:bg-slate-700/80"
+              aria-label="Close resume"
+            >
+              ✕
+            </button>
+            <iframe
+              src={resumeUrl}
+              title="Resume"
+              className="w-full h-full bg-transparent"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
 
       <footer className="max-w-6xl mx-auto px-5 sm:px-8 pb-12 text-xs text-slate-400">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
